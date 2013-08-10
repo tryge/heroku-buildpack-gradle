@@ -41,7 +41,8 @@ else
     cd $CACHE_DIR
     GRADLE_URL="http://services.gradle.org/distributions/${GRADLE_DIST}-all.zip"
     echo -n "-----> Installing $GRADLE_DIST....."
-    curl --silent --location $GRADLE_URL | tar xz
+    wget $GRADLE_URL
+    unzip ${GRADLE_DIST}-all.zip
     echo " done"
   fi
   BUILDCMD="gradle -I $OPT_DIR/init.gradle"
