@@ -44,7 +44,7 @@ else
     curl --location $GRADLE_URL > ${GRADLE_DIST}-all.zip
     jar xf ${GRADLE_DIST}-all.zip
     ls -al ${GRADLE_DIST}/bin
-    chmod o+rx ${GRADLE_DIST}/bin/gradle
+    chmod u+rx ${GRADLE_DIST}/bin/gradle
     ls -al ${GRADLE_DIST}/bin
     echo " done"
   fi
