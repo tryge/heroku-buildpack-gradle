@@ -43,9 +43,7 @@ else
     echo -n "-----> Installing $GRADLE_DIST....."
     curl --location $GRADLE_URL > ${GRADLE_DIST}-all.zip
     jar xf ${GRADLE_DIST}-all.zip
-    ls -al ${GRADLE_DIST}/bin
     chmod u+rx ${GRADLE_DIST}/bin/gradle
-    ls -al ${GRADLE_DIST}/bin
     echo " done"
   fi
   BUILDCMD="gradle -I $OPT_DIR/init.gradle"
@@ -61,7 +59,7 @@ export PATH=$CACHE_DIR/$GRADLE_DIST/bin:$PATH
 echo "-----> Building Gradle app..."
 echo "       WARNING: The Gradle buildpack is currently in Beta."
 echo "-----> executing $BUILDCMD"
-ls -al $CACHE_DIR/$GRADLE_DIST/bin
+
 $BUILDCMD 2>&1 | sed -u 's/^/       /'
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
