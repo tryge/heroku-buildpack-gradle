@@ -39,7 +39,7 @@ if [ -f $BUILD_DIR/gradlew ] ; then
 else
   if [ ! -d $CACHE_DIR/$GRADLE_DIST ] ; then
     cd $CACHE_DIR
-    GRADLE_URL="http://services.gradle.org/distributions/${GRADLE_DIST}-all.zip"
+    GRADLE_URL="http://services.gradle.org/distributions/${GRADLE_DIST}-bin.zip"
     echo -n "-----> Installing $GRADLE_DIST....."
     curl --location $GRADLE_URL > ${GRADLE_DIST}-all.zip
     jar xf ${GRADLE_DIST}-all.zip
